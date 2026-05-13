@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Special+Elite&display=swap');
+
+h1{
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    align-items: center;
+      z-index: 1;
+}
+img{
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+     padding: 10px; /* tloušťka rámečku */
+
+    background: linear-gradient(
+        135deg,
+        #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+  
+}
+body{
+    background-color: #ffffff;
+    font-family: "Cause", cursive;
+    text-align: center;
+    color: rgb(0, 0, 0);
+      position: relative;
+    z-index: 1;
+
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        url("obrazky/images.png"),
+        url("obrazky/mikrofon.png"),
+        url("obrazky/mikrofon.png");
+
+    background-repeat:
+        repeat,
+        repeat,
+        repeat;
+
+    background-size:
+        120px,
+        170px,
+        90px;
+
+    background-position:
+        0 0,
+        80px 120px,
+        200px 60px;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+      z-index: -1;
+}
+
+        /* HAMBURGER */
+        .menu-icon {
+            font-size: 30px;
+            padding: 15px;
+            cursor: pointer;
+            background-color: #ffffff;
+            color: black;
+
+               display: flex;
+    justify-content: left;
+    align-items: left;
+        }
+                /* NAVBAR S ANIMACÍ */
+        nav {
+             background: linear-gradient(
+        135deg,
+       #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+nav.open {
+            max-height: 300px; /* dostatečná výška pro menu */
+        }
+              nav a {
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            border-top: 1px solid #80c4d4;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    nav.open a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav a:hover {
+            background-color: #80c4d4;
+        }
+              /* OBSAH */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
