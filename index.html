@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>školní podcast</title>
+    <link rel="stylesheet" href="index.css">
+
 <body>
-    <header class="header">
-  <div class="container">
-    <h1 class="logo">MojeStránka</h1>
-    
-    <nav class="nav">
-      <a href="#">Domů</a>
-      <a href="#">O nás</a>
-      <a href="#">Služby</a>
-      <a href="#">Kontakt</a>
+     <!-- HAMBURGER -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+     <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("open");
+        }
+    </script>
+
+
+    <!-- NAVBAR -->
+    <nav id="menu">
+        <a href="https://pid.cz/">Domů</a>
+        <a href="#">Epizody</a>
+        <a href="#">O nás</a>
+        <a href="#">Kontakt</a>
     </nav>
-  </div>
-</header>
-    <p>Hello world podcast Kbely!</p>
+    <h1>ŠKOLNÍ PODCAST</h1>
+<img src="1. školní podcast.jpg" alt="" width="700" height="510">
+<br><br><br>
+
+<h3>Uvítací text k školnímu podcastu.</h3>
+<p>Tento podcast je věnován všem studentům a učitelům, kteří se zajímají o moderní výukové metody a technologie.
+V každém díle se budeme věnovat různým tématům, která jsou relevantní pro školní prostředí, jako jsou například digitální nástroje pro výuku, inovativní pedagogické přístupy, nebo způsoby, jak zlepšit komunikaci mezi studenty a učiteli.
+Naším cílem je poskytnout inspiraci a praktické tipy, které mohou pomoci zlepšit vzdělávací proces a učinit ho zajímavějším pro všechny zúčastněné.
+Těšíme se na společné objevování nových možností a na to, že nám pomůžete vytvořit komunitu, která bude sdílet své zkušenosti a nápady pro lepší školní prostředí.
+
+</p>
 </body>
 </html>

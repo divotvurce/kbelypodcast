@@ -45,9 +45,9 @@ body::before {
     inset: 0;
 
     background-image:
-        url("obrazky/images.png"),
-        url("obrazky/mikrofon.png"),
-        url("obrazky/mikrofon.png");
+        url("mikrofon                      .png"),
+        url("mikrofon                      .png"),
+        url("mikrofon                      .png");
 
     background-repeat:
         repeat,
@@ -116,7 +116,7 @@ nav.open {
         }
 
         nav a:hover {
-            background-color: #80c4d4;
+            background-color: #205480;
         }
               /* OBSAH */
         .container {
