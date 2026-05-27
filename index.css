@@ -45,9 +45,10 @@ body::before {
     inset: 0;
 
     background-image:
-        url("mikrofon     .png"),
-        url("mikrofon      .png"),
-        url("mikrofon       .png");
+        url("mikrofon2.png"),
+         url("mikrofon2.png")
+         url("mikrofon2.png");
+
 
     background-repeat:
         repeat,
