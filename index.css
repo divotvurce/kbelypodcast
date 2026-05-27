@@ -70,18 +70,21 @@ body::before {
       z-index: -1;
 }
 
-        /* HAMBURGER */
-        .menu-icon {
-            font-size: 30px;
-            padding: 15px;
-            cursor: pointer;
-            background-color: #ffffff;
-            color: black;
+.menu-icon {
+    font-size: 30px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: black;
 
-               display: flex;
-    justify-content: left;
-    align-items: left;
-        }
+    display: block;
+    width: fit-content;
+
+    margin-left: auto;
+}
+header {
+    display: flex;
+}
                 /* NAVBAR S ANIMACÍ */
         nav {
              background: linear-gradient(
@@ -125,3 +128,22 @@ nav.open {
             padding: 20px;
             text-align: center;
         }
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo{
+    width: 80px;
+    height: auto;
+
+    margin: 0;
+    display: block;
+
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    border-radius: 0;
+}
