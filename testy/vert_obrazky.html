@@ -1,0 +1,174 @@
+
+<style>
+    body {
+        margin: 0;
+        padding: 30px 20px;
+        background: #111827;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    header h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        color: #9ca3af;
+    }
+
+    .team {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .member {
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+
+    .member:hover {
+        transform: translateY(-5px);
+    }
+
+    .member img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        display: block;
+        background: #374151;
+    }
+
+    .member-content {
+        padding: 20px;
+    }
+
+    .member h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+    }
+
+    .member p {
+        color: #cbd5e1;
+        line-height: 1.6;
+        margin: 0 0 18px;
+    }
+
+    button {
+        padding: 10px 14px;
+        border: none;
+        border-radius: 8px;
+        background: #3b82f6;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #2563eb;
+    }
+
+    @media (max-width: 600px) {
+        .team {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<header>
+    <h1 contenteditable="true">NÁŠ TÝM</h1>
+    <p contenteditable="true">Poznej lidi, kteří za tím stojí.</p>
+</header>
+
+<main class="team">
+
+    <section class="member">
+        <img src="https://placehold.co/600x800/263449/FFFFFF?text=FOTO+1" alt="Člen týmu 1">
+        <div class="member-content">
+            <h2 contenteditable="true">Jméno Příjmení</h2>
+            <p contenteditable="true">Role v týmu a krátký popis člena.</p>
+            <button onclick="changeImage(this)">Změnit fotku</button>
+        </div>
+    </section>
+
+    <section class="member">
+        <img src="https://placehold.co/600x800/374151/FFFFFF?text=FOTO+2" alt="Člen týmu 2">
+        <div class="member-content">
+            <h2 contenteditable="true">Jméno Příjmení</h2>
+            <p contenteditable="true">Role v týmu a krátký popis člena.</p>
+            <button onclick="changeImage(this)">Změnit fotku</button>
+        </div>
+    </section>
+
+    <section class="member">
+        <img src="https://placehold.co/600x800/374151/FFFFFF?text=FOTO+3" alt="Člen týmu 3">
+        <div class="member-content">
+            <h2 contenteditable="true">Jméno Příjmení</h2>
+            <p contenteditable="true">Role v týmu a krátký popis člena.</p>
+            <button onclick="changeImage(this)">Změnit fotku</button>
+        </div>
+    </section>
+
+    <section class="member">
+        <img src="https://placehold.co/600x800/263449/FFFFFF?text=FOTO+4" alt="Člen týmu 4">
+        <div class="member-content">
+            <h2 contenteditable="true">Jméno Příjmení</h2>
+            <p contenteditable="true">Role v týmu a krátký popis člena.</p>
+            <button onclick="changeImage(this)">Změnit fotku</button>
+        </div>
+    </section>
+
+    <section class="member">
+        <img src="https://placehold.co/600x800/263449/FFFFFF?text=FOTO+5" alt="Člen týmu 5">
+        <div class="member-content">
+            <h2 contenteditable="true">Jméno Příjmení</h2>
+            <p contenteditable="true">Role v týmu a krátký popis člena.</p>
+            <button onclick="changeImage(this)">Změnit fotku</button>
+        </div>
+    </section>
+
+    <section class="member">
+        <img src="https://placehold.co/600x800/374151/FFFFFF?text=FOTO+6" alt="Člen týmu 6">
+        <div class="member-content">
+            <h2 contenteditable="true">Jméno Příjmení</h2>
+            <p contenteditable="true">Role v týmu a krátký popis člena.</p>
+            <button onclick="changeImage(this)">Změnit fotku</button>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    function changeImage(button) {
+        const img = button.closest(".member").querySelector("img");
+        const input = document.createElement("input");
+
+        input.type = "file";
+        input.accept = "image/*";
+
+        input.onchange = function () {
+            const file = input.files[0];
+
+            if (file) {
+                img.src = URL.createObjectURL(file);
+            }
+        };
+
+        input.click();
+    }
+</script>

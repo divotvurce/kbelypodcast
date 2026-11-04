@@ -29,7 +29,79 @@
     
     <h1>NÁŠ TÝM</h1>
 
-<img src="obrazky/1.png" alt="" >    
+<img src="obrazky/1.png" alt="" class="obrazektym">    
 
+<body>
+
+    <header>
+        <h1 contenteditable="true">NÁŠ TÝM</h1>
+        <p contenteditable="true">
+            Vítejte na naší týmové stránce.
+        </p>
+    </header>
+
+    <main>
+
+        <section>
+            <img
+                src="https://placehold.co/600x350?text=OBRAZEK+1"
+                alt="Obrázek 1"
+                width="400"
+            >
+
+            <h2 contenteditable="true">Člen týmu 1</h2>
+
+            <p contenteditable="true">
+                Zde je placeholder. Klikni na text a přepiš ho.
+            </p>
+
+            <button onclick="changeImage(this)">
+                Změnit obrázek
+            </button>
+        </section>
+
+        <section>
+            <img
+                src="https://placehold.co/600x350?text=OBRAZEK+2"
+                alt="Obrázek 2"
+                width="400"
+            >
+
+            <h2 contenteditable="true">Člen týmu 2</h2>
+
+            <p contenteditable="true">
+                Sem napiš vlastní text nebo popis.
+            </p>
+
+            <button onclick="changeImage(this)">
+                Změnit obrázek
+            </button>
+        </section>
+
+    </main>
+
+    <script>
+        function changeImage(button) {
+            const img = button
+                .closest("section")
+                .querySelector("img");
+
+            const input = document.createElement("input");
+            input.type = "file";
+            input.accept = "image/*";
+
+            input.onchange = function () {
+                if (input.files[0]) {
+                    img.src = URL.createObjectURL(input.files[0]);
+                }
+            };
+
+            input.click();
+        }
+    </script>
+
+</body>
+
+<img src="" alt="">
 </body>
 </html>
