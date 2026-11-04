@@ -1,0 +1,390 @@
+
+/* =================================
+   FONTY
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Special+Elite&display=swap');
+
+/* =================================
+   ZÁKLAD WEBU
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #ffffff;
+    color: #000000;
+
+    font-family: "Cause", cursive;
+    text-align: center;
+
+    position: relative;
+    isolation: isolate;
+}
+
+/* POZADÍ S MIKROFONEM */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("mikrofon2.png");
+    background-repeat: repeat;
+    background-size: 120px;
+    background-position: 0 0;
+
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =================================
+   NADPISY
+================================= */
+
+h1, h2, h3 {
+    font-family: 'Special Elite', cursive;
+    color: #173863;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* LOGO */
+
+.logo {
+    width: 80px;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+
+    box-shadow: none;
+    background: none;
+    border-radius: 0;
+}
+
+/* =================================
+   MENU IKONA
+================================= */
+
+.menu-icon {
+    font-size: 30px;
+    padding: 15px;
+
+    cursor: pointer;
+
+    background-color: #ffffff;
+    color: #173863;
+
+    display: block;
+    width: fit-content;
+
+    margin-left: auto;
+}
+
+/* =================================
+   NAVIGAČNÍ MENU
+================================= */
+
+nav {
+    background: linear-gradient(
+        135deg,
+        #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+
+    overflow: hidden;
+    max-height: 0;
+
+    transition: max-height 0.4s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+nav.open {
+    max-height: 300px;
+}
+
+nav a {
+    padding: 15px;
+
+    color: white;
+    text-decoration: none;
+
+    border-top: 1px solid rgba(255,255,255,0.3);
+
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: all 0.3s ease;
+}
+
+nav.open a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav a:hover {
+    background-color: #205480;
+}
+
+/* =================================
+   HLAVNÍ OBSAH
+================================= */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+
+    text-align: center;
+}
+
+/* =================================
+   OBRÁZKY
+================================= */
+
+img {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+    height: auto;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* LOGO A SPECIÁLNÍ OBRÁZKY */
+
+.logo {
+    width: 80px;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+
+.obrazektym {
+    width: 50%;
+    height: auto;
+}
+
+/* =================================
+   STRÁNKA NÁŠ TÝM
+================================= */
+
+.team-header {
+    display: block;
+    text-align: center;
+
+    margin: 30px auto 40px;
+    padding: 20px;
+}
+
+.team-header h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.team-header p {
+    font-size: 18px;
+}
+
+/* ROZLOŽENÍ KARET */
+
+.team {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* KARTA ČLENA */
+
+.member {
+    background: rgba(255,255,255,0.94);
+
+    border: 2px solid #40285f;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+
+/* FOTKY V KARTÁCH */
+
+.member img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 0;
+    padding: 7px;
+
+    border-radius: 0;
+
+    background: linear-gradient(
+        135deg,
+        #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+
+    box-shadow: none;
+}
+
+/* TEXT V KARTÁCH */
+
+.member-content {
+    padding: 20px;
+}
+
+.member h2 {
+    font-size: 23px;
+    margin: 0 0 12px;
+}
+
+.member p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* =================================
+   TLAČÍTKA
+================================= */
+  
+button {
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+
+    color: white;
+
+    font-family: "Cause", cursive;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                opacity 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* =================================
+   PATIČKA
+================================= */
+
+footer {
+    font-family: 'Special Elite', cursive;
+
+    padding: 25px 15px;
+
+    text-align: center;
+    color: #173863;
+}
+
+/* =================================
+   MOBILNÍ ZOBRAZENÍ
+================================= */
+
+@media (max-width: 600px) {
+
+    .team {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 25px;
+    }
+
+    .team-header h1 {
+        font-size: 28px;
+    }
+
+    .member img {
+        height: 320px;
+    }
+
+    .obrazektym {
+        width: 85%;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
