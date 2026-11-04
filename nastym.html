@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Náš tým</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="testy/test_style.css">
 </head>
-<body>
-       <!-- HAMBURGER -->
+      <!-- HAMBURGER -->
     <header>
     <img src="obrazky/logo.png" class="logo">
 
@@ -26,61 +25,60 @@
         <a href="kontakty.html">Kontakt</a>
         <a href="admin.html">Admin</a>
     </nav>
-    
-    <h1>NÁŠ TÝM</h1>
-
-<img src="obrazky/1.png" alt="" class="obrazektym">    
-
 <body>
-
     <header>
-        <h1 contenteditable="true">NÁŠ TÝM</h1>
-        <p contenteditable="true">
-            Vítejte na naší týmové stránce.
-        </p>
-    </header>
+    <h1   class="team-header">NÁŠ TÝM</h1>
+    <p   class="team-header">Poznej lidi, kteří za tím stojí.</p>
+</header>
 
-    <main>
+<main class="team">
+    <!-- LIDI -->
 
-        <section>
-            <img
-                src="https://placehold.co/600x350?text=OBRAZEK+1"
-                alt="Obrázek 1"
-                width="400"
-            >
+    <section class="member">
+        <img src="obrazky/2.png" alt="Michal Koňůch">
+        <div class="member-content">
+            <h2  >Michal Koňůch</h2>
+            <p  >Podcaster a střihač</p>
+             
+        </div>
+    </section>
 
-            <h2 contenteditable="true">Člen týmu 1</h2>
+    <section class="member">
+        <img src="obrazky/3.png" alt="Max Radechovský">
+        <div class="member-content">
+            <h2  >Max Radechovský</h2>
+            <p  >Moderátor zpráv</p>
+             
+        </div>
+    </section>
 
-            <p contenteditable="true">
-                Zde je placeholder. Klikni na text a přepiš ho.
-            </p>
+    <section class="member">
+        <img src="obrazky/4.png" alt="Vincent a Honza">
+        <div class="member-content">
+            <h2  >Vincent a Honza</h2>
+            <p  >Technici</p>
+             
+        </div>
+    </section>
 
-            <button onclick="changeImage(this)">
-                Změnit obrázek
-            </button>
-        </section>
+    <section class="member">
+        <img src="obrazky/5.png" alt="Mikuláš Michl">
+        <div class="member-content">
+            <h2  >Mikuláš Michl</h2>
+            <p  >Podcaster a anketář</p>
+             
+        </div>
+    </section>
 
-        <section>
-            <img
-                src="https://placehold.co/600x350?text=OBRAZEK+2"
-                alt="Obrázek 2"
-                width="400"
-            >
-
-            <h2 contenteditable="true">Člen týmu 2</h2>
-
-            <p contenteditable="true">
-                Sem napiš vlastní text nebo popis.
-            </p>
-
-            <button onclick="changeImage(this)">
-                Změnit obrázek
-            </button>
-        </section>
-
-    </main>
-
-    <script>
+    <section class="member">
+        <img src="obrazky/6.png" alt="Bety Mazancová">
+        <div class="member-content">
+            <h2  >Bety Mazancová</h2>
+            <p  >Moderátorka zpráv a anketářka</p>
+             
+        </div>
+    </section>
+ <script>
         function changeImage(button) {
             const img = button
                 .closest("section")
@@ -99,9 +97,6 @@
             input.click();
         }
     </script>
-
-</body>
-
-<img src="" alt="">
+</main>
 </body>
 </html>

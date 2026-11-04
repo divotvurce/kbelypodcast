@@ -1,96 +1,13 @@
-
-<style>
-    body {
-        margin: 0;
-        padding: 30px 20px;
-        background: #111827;
-        color: white;
-        font-family: Arial, sans-serif;
-    }
-
-    header {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    header h1 {
-        font-size: 36px;
-        letter-spacing: 2px;
-    }
-
-    header p {
-        color: #9ca3af;
-    }
-
-    .team {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .member {
-        background: #1f2937;
-        border: 1px solid #374151;
-        border-radius: 16px;
-        overflow: hidden;
-        transition: transform 0.2s;
-    }
-
-    .member:hover {
-        transform: translateY(-5px);
-    }
-
-    .member img {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        object-fit: cover;
-        display: block;
-        background: #374151;
-    }
-
-    .member-content {
-        padding: 20px;
-    }
-
-    .member h2 {
-        margin: 0 0 10px;
-        font-size: 22px;
-    }
-
-    .member p {
-        color: #cbd5e1;
-        line-height: 1.6;
-        margin: 0 0 18px;
-    }
-
-    button {
-        padding: 10px 14px;
-        border: none;
-        border-radius: 8px;
-        background: #3b82f6;
-        color: white;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background: #2563eb;
-    }
-
-    @media (max-width: 600px) {
-        .team {
-            grid-template-columns: 1fr;
-            max-width: 400px;
-        }
-
-        header h1 {
-            font-size: 28px;
-        }
-    }
-</style>
-
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test_style.css">
+</head>
+<body>
+    <header>
     <h1 contenteditable="true">NÁŠ TÝM</h1>
     <p contenteditable="true">Poznej lidi, kteří za tím stojí.</p>
 </header>
@@ -153,11 +70,26 @@
 
 </main>
 
-<script>
-    function changeImage(button) {
-        const img = button.closest(".member").querySelector("img");
-        const input = document.createElement("input");
 
+<script>
+    // Načtení uložených fotografií při otevření stránky
+    document.querySelectorAll(".member").forEach((member, index) => {
+        const savedImage = localStorage.getItem("teamImage_" + index);
+
+        if (savedImage) {
+            member.querySelector("img").src = savedImage;
+        }
+    });
+
+    function changeImage(button) {
+        const member = button.closest(".member");
+        const img = member.querySelector("img");
+
+        // Zjištění pořadí člena týmu
+        const members = [...document.querySelectorAll(".member")];
+        const index = members.indexOf(member);
+
+        const input = document.createElement("input");
         input.type = "file";
         input.accept = "image/*";
 
@@ -165,10 +97,29 @@
             const file = input.files[0];
 
             if (file) {
-                img.src = URL.createObjectURL(file);
+                const reader = new FileReader();
+
+                reader.onload = function () {
+                    // Zobrazení nové fotografie
+                    img.src = reader.result;
+
+                    // Uložení fotografie do localStorage
+                    try {
+                        localStorage.setItem(
+                            "teamImage_" + index,
+                            reader.result
+                        );
+                    } catch (error) {
+                        alert("Fotografie je příliš velká. Zkus menší obrázek.");
+                    }
+                };
+
+                reader.readAsDataURL(file);
             }
         };
 
         input.click();
     }
 </script>
+</body>
+</html>
