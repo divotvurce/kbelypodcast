@@ -34,9 +34,9 @@
         <br>
         Wellbeeing
     </p>
-
-      <p><i class="fa-brands fa-spotify"></i></p>
-
+<a href="https://open.spotify.com/episode/1TsXL2DoDn5CJwdqL1PAiR"><i class="fa-brands fa-spotify"></i></a>
+   <br>
+<br>
     <a href="https://www.yout-ube.com/watch?v=Ri2Y_VHlE-8">
         <img src="obrazky/1. epizoda.png" alt="">
     </a>
@@ -48,12 +48,14 @@
         Erasmus-hosti z německa
     </p>
 
-      <p><i class="fa-brands fa-spotify"></i></p>
+
+    <a href="https://open.spotify.com/episode/4yvkMQMfnZKjPIncZu75Rq"><p><i class="fa-brands fa-spotify"></i></p></a>
+    
 
     <a href="https://www.yout-ube.com/watch?v=gqkZtcZWAnQ">
         <img src="obrazky/2. epizoda.png" alt="">
     </a>
-    <em>kliknutím otevřete</em>
+  
     <br>
    <br>
 
@@ -62,96 +64,47 @@
     ZŠ a MŠ Brantice
 </p>
   
-<p><i class="fa-brands fa-spotify"></i></p>
+<a href="https://open.spotify.com/episode/3ebJ05IO7m7GAf309eF9g9"><p><i class="fa-brands fa-spotify"></i></p></a>
+
 
    <a href="https://www.yout-ube.com/watch?v=Yr3XEIMgH6g">
     <img src="obrazky/3. epizoda.png" alt="">
    </a>
-   <em>kliknutím otevřete</em>
+
     <br>
 
    <br>
+
+
    <p>4. epizoda 
     <br>
     Na slovíčko s ředitelkou
 </p>
 
-     <p><i class="fa-brands fa-spotify"></i></p>
+<a href="https://open.spotify.com/episode/4s3NnWaFlEenwH5BX5AMDl"><p><i class="fa-brands fa-spotify"></i></p></a>
+   
+
    <a href="https://www.yout-ube.com/watch?v=mGsCFcjzyX8">
     <img src="obrazky/4. epiozoda.avif" alt="">
    </a>
-   <em>kliknutím otevřete</em>
+<br>
     <br>
-    <br>
+
 
    <p>5. epizoda
     <br>
     Školní Parlament
 </p>
 
+<a href="https://open.spotify.com/episode/3h65iCw61GXOZHmK3OiUc8"><p><i class="fa-brands fa-spotify"></i></p></a>
 
-<p><i class="fa-brands fa-spotify"></i></p>
+
 <a href="https://www.yout-ube.com/watch?v=TA23tAfQjts">
     <img src="obrazky/5. epizoda.png" alt=""></a>
      </a>
-   <em>kliknutím otevřete</em>
+  
     <br>
 
 
 </body>
 </html>
-
-<a href="https://example.com">
-    <img src="obrazek.jpg" alt="Popis obrázku">
-    </a>
-    ```
-
-Pokud se vám stává, že je odkaz klikatelný i v prostoru **vedle** obrázku, je to obvykle způsobeno tím, že značka `<a>` (nebo její kontejner) se chová jako blokový prvek (`display: block`) a roztahuje se na **šířku celé stránky** nebo rodičovského elementu.
-
-Zde jsou dva hlavní způsoby, jak to vyřešit pomocí CSS:
-
----
-
-### 1. Změna chování odkazu na `inline` nebo `inline-block`
-Nejčastější příčina je, že odkaz zabírá celou šířku řádku. Nastavením správného `display` zajistíte, že se odkaz roztáhne **přesně na velikost obrázku**.
-
-```html
-<style>
-.obrazkovy-odkaz {
-        display: inline-block; /* Odkaz bude velký přesně jako obrázek uvnitř */
-            /* případně můžete použít display: inline; */
-            }
-
-            .obrazkovy-odkaz img {
-                    display: block; /* Odstraní nechtěnou mezeru pod obrázkem */
-                        }
-                        </style>
-
-                        <a href="https://example.com" class="obrazkovy-odkaz">
-                            <img src="obrazek.jpg" alt="Popis">
-                            </a>
-                            ```
-
----
-
-### 2. Omezení šířky odkazu (`fit-content`)
-Pokud potřebujete, aby se prvek choval jako blok, ale přesto kopíroval jen velikost obsahu:
-
-```html
-<style>
-.obrazkovy-odkaz {
-        display: block;
-            width: fit-content; /* Nastaví šířku přesně podle obrázku */
-            }
-            </style>
-
-            <a href="https://example.com" class="obrazkovy-odkaz">
-                <img src="obrazek.jpg" alt="Popis">
-                </a>
-                ```
-
----
-
-### Shrnutí doporučení
-* Zkontrolujte, zda nemáte v CSS pro `<a>` nastaveno `display: block` nebo `width: 100%`.
-* Použití `display: inline-block;` u odkazu obvykle tento problém okamžitě vyřeší a zajistí, že klikací zóna bude **pouze na samotném obrázku**.
