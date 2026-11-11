@@ -150,7 +150,102 @@ footer {
   font-family: 'Special Elite', cursive;
 }
 
-.obrazektym {
-    width: 50%;
-    height: 50%;
+/* =================================
+   STRÁNKA NÁŠ TÝM
+================================= */
+
+.team-header {
+    display: block;
+    text-align: center;
+
+    margin: 30px auto 40px;
+    padding: 20px;
+}
+
+.team-header h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.team-header p {
+    font-size: 18px;
+}
+
+/* ROZLOŽENÍ KARET */
+
+.team {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* KARTA ČLENA */
+
+.member {
+    background: rgba(255,255,255,0.94);
+
+    border: 2px solid #40285f;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+
+/* FOTKY V KARTÁCH */
+
+.member img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 0;
+    padding: 7px;
+
+    border-radius: 0;
+
+    background: linear-gradient(
+        135deg,
+        #173863,
+        #40285f,
+        #9c3838,
+        #ac2727
+    );
+
+    box-shadow: none;
+}
+
+/* TEXT V KARTÁCH */
+
+.member-content {
+    padding: 20px;
+}
+
+.member h2 {
+    font-size: 23px;
+    margin: 0 0 12px;
+}
+
+.member p {
+    font-size: 16px;
+    margin-bottom: 20px;
 }
