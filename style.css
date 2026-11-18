@@ -249,3 +249,24 @@ footer {
     font-size: 16px;
     margin-bottom: 20px;
 }
+
+
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+justify-content: center;
+
+}
+
+.card-login {
+flex: 20px;
+background-color: rgb(254, 254, 254);
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 4px 8px  rgb(0, 0, 0);
+text-align: center;
+font-family: 'Special Elite', cursive;
+scroll-behavior: smooth;
+max-width: 400px;
+}
